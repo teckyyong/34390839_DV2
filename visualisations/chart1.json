@@ -11,7 +11,7 @@
   "height": 400,
 
   "data": {
-    "url": "data/retail_turnoverbyindustry.csv"
+    "url": "data/chart1_retail_categories_clean.csv"
   },
 
   "mark": {
