@@ -11,7 +11,7 @@
   "height": 400,
 
   "data": {
-    "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/stocks.csv"
+    "url": "data/retail_turnoverbyindustry.csv"
   },
 
   "mark": {
