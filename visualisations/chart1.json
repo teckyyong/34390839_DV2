@@ -1,63 +1,122 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-
-  "title": {
-    "text": "Growth of Retail Categories in Australia",
-    "fontSize": 20
-  },
-
-  "width": 700,
-
-  "height": 400,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "data": {
     "url": "data/chart1_retail_categories_clean.csv"
   },
 
-  "mark": {
-    "type": "line",
-    "point": true
-  },
+  "transform": [
+    {"filter": "year(datum.date) >= 2000"}
+  ],
 
-  "encoding": {
-
-    "x": {
-      "field": "date",
-      "type": "temporal",
-      "title": "Year"
-    },
-
-    "y": {
-      "field": "price",
-      "type": "quantitative",
-      "title": "Value"
-    },
-
-    "color": {
-      "field": "symbol",
-      "type": "nominal",
-      "title": "Category"
-    },
-
-    "tooltip": [
-
-      {
-        "field": "date",
-        "type": "temporal"
-      },
-
-      {
-        "field": "symbol",
-        "type": "nominal"
-      },
-
-      {
-        "field": "price",
-        "type": "quantitative"
+  "params": [
+    {
+      "name": "brush",
+      "select": {
+        "type": "interval",
+        "encodings": ["x"]
       }
+    },
+    {
+      "name": "category_highlight",
+      "select": {
+        "type": "point",
+        "fields": ["category"]
+      },
+      "bind": "legend"
+    }
+  ],
 
-    ]
+  "vconcat": [
+    {
+      "title": "Growth of Retail Categories in Australia",
+      "width": 700,
+      "height": 400,
 
-  }
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
 
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "title": "Year",
+          "scale": {
+            "domain": {
+              "param": "brush"
+            }
+          }
+        },
+        "y": {
+          "field": "turnover_millions",
+          "type": "quantitative",
+          "title": "Retail Turnover ($ millions)"
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Retail Category"
+        },
+        "opacity": {
+          "condition": {
+            "param": "category_highlight",
+            "value": 1
+          },
+          "value": 0.15
+        },
+        "tooltip": [
+          {"field": "date", "type": "temporal", "title": "Date"},
+          {"field": "category", "type": "nominal", "title": "Category"},
+          {
+            "field": "turnover_millions",
+            "type": "quantitative",
+            "title": "Turnover ($m)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "title": "Drag across this timeline to zoom",
+      "width": 700,
+      "height": 80,
+
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "turnover_millions",
+          "type": "quantitative",
+          "title": null,
+          "axis": {
+            "tickCount": 3,
+            "grid": false
+          }
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": "Retail Category"
+        },
+        "opacity": {
+          "condition": {
+            "param": "category_highlight",
+            "value": 1
+          },
+          "value": 0.15
+        }
+      }
+    }
+  ]
 }
