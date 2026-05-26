@@ -50,16 +50,29 @@ vegaEmbed(
 </html>
 
 <h2>
-Chart 2: Online Spend by Category
+Consumer Shopping Behaviour
 </h2>
+
+<div class="row-container">
 
 <div id="chart2"></div>
 
+<div id="chart3"></div>
+
+</div>
+
 <script>
+
 vegaEmbed(
-  "#chart2",
-  "visualisations/chart2.json"
+"#chart2",
+"visualisations/chart2.json"
 ).catch(console.error);
+
+vegaEmbed(
+"#chart3",
+"visualisations/chart3.json"
+).catch(console.error);
+
 </script>
 
 <h2>Chart 4: Online Spending Across Australian States</h2>

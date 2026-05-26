@@ -7,3 +7,37 @@ padding:40px;
 background:#F7F7F7;
 
 }
+
+.row-container{
+
+display:flex;
+
+gap:30px;
+
+align-items:flex-start;
+
+justify-content:center;
+
+margin-bottom:50px;
+
+flex-wrap:wrap;
+
+}
+
+#chart2,
+#chart3{
+
+flex:1;
+
+min-width:450px;
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,0.08);
+
+}

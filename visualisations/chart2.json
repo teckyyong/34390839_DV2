@@ -1,7 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "title": "Online Spend by Category in Australia, 2025",
+  "title": {
+    "text": "Online Spend by Category in Australia, 2025",
+    "fontSize": 20
+  },
 
   "data": {
     "url": "data/chart2_online_category_spend_2024_2025.csv"
@@ -13,8 +16,8 @@
     }
   ],
 
-  "width": 800,
-  "height": 420,
+  "width": 420,
+  "height": 350,
 
   "params": [
     {
@@ -29,27 +32,32 @@
 
   "mark": {
     "type": "bar",
-    "cornerRadiusEnd": 6
+    "cornerRadiusTopLeft": 6,
+    "cornerRadiusTopRight": 6
   },
 
   "encoding": {
+
     "x": {
+      "field": "category",
+      "type": "nominal",
+      "sort": "-y",
+      "title": "Category",
+      "axis": {
+        "labelAngle": -35
+      }
+    },
+
+    "y": {
       "field": "online_spend_billion",
       "type": "quantitative",
       "title": "Online spend ($ billions)"
     },
 
-    "y": {
-      "field": "category",
-      "type": "nominal",
-      "sort": "-x",
-      "title": "Category"
-    },
-
     "color": {
       "field": "category",
       "type": "nominal",
-      "title": "Category"
+      "legend": null
     },
 
     "opacity": {
@@ -62,15 +70,11 @@
 
     "tooltip": [
       {
-        "field": "category",
-        "type": "nominal",
-        "title": "Category"
+        "field": "category"
       },
       {
         "field": "online_spend_billion",
-        "type": "quantitative",
-        "title": "Online spend ($b)",
-        "format": ".1f"
+        "title": "Online spend ($b)"
       }
     ]
   }

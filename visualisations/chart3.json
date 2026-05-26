@@ -1,0 +1,103 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Online vs In-store Shopping Behaviour by Generation (2025)",
+    "subtitle": "Click generation in legend to highlight",
+    "fontSize": 20
+  },
+
+  "width": 650,
+  "height": 450,
+
+  "data": {
+    "url": "data/generation_channel_online_spending.csv"
+  },
+
+  "params": [
+    {
+      "name": "generation_highlight",
+      "select": {
+        "type": "point",
+        "fields": ["generation"]
+      },
+      "bind": "legend"
+    }
+  ],
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 8,
+    "cornerRadiusTopRight": 8
+  },
+
+  "encoding": {
+
+    "x": {
+      "field": "generation",
+      "type": "nominal",
+      "sort": [
+        "Gen Z",
+        "Millennials",
+        "Gen X",
+        "Baby Boomers",
+        "Builders"
+      ],
+      "title": "Generation"
+    },
+
+    "y": {
+      "field": "percent",
+      "type": "quantitative",
+      "stack": "normalize",
+      "title": "Shopping Share (%)"
+    },
+
+    "color": {
+      "field": "channel",
+      "type": "nominal",
+      "title": "Shopping Channel",
+
+      "scale": {
+        "range": [
+          "#5B8FF9",
+          "#F6BD16"
+        ]
+      }
+    },
+
+    "opacity": {
+      "condition": {
+        "param": "generation_highlight",
+        "value": 1
+      },
+
+      "value": 0.25
+    },
+
+    "tooltip": [
+      {
+        "field": "generation"
+      },
+
+      {
+        "field": "channel"
+      },
+
+      {
+        "field": "percent",
+        "title": "Share (%)"
+      },
+
+      {
+        "field": "online_spend_billion",
+        "title": "Online spend ($b)"
+      },
+
+      {
+        "field": "yoy_growth",
+        "title": "YoY growth (%)"
+      }
+    ]
+  }
+}
