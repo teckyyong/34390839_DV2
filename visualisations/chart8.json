@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Online Spending by Generation in Australia (2024)",
+    "subtitle": "Small multiple bar charts comparing spend, growth and share"
+  },
+
+  "data": {
+    "url": "data/chart8_generation_spending_metrics.csv"
+  },
+
+  "width": 220,
+  "height": 260,
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 5,
+    "cornerRadiusTopRight": 5
+  },
+
+  "encoding": {
+    "x": {
+      "field": "generation",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelAngle": -35
+      }
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "generation",
+      "type": "nominal",
+      "legend": null
+    },
+    "column": {
+      "field": "metric",
+      "type": "nominal",
+      "title": null
+    },
+    "tooltip": [
+      {"field": "generation"},
+      {"field": "metric"},
+      {"field": "value"}
+    ]
+  }
+}

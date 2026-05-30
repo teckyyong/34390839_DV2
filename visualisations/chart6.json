@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "State Growth in Online Shopping Across Australia (2022)",
+
+  "width": 850,
+  "height": 420,
+
+  "data": {
+    "url": "data/chart6_state_growth_lollipop.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "state_abbr",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State / Territory"
+    },
+    "x": {
+      "field": "yoy_growth_percent",
+      "type": "quantitative",
+      "title": "YoY growth (%)"
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "height": 3
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        },
+        "x2": {
+          "field": "yoy_growth_percent"
+        },
+        "color": {
+          "field": "growth_type",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 250
+      },
+      "encoding": {
+        "color": {
+          "field": "growth_type",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {"field": "state", "title": "State"},
+          {"field": "yoy_growth_percent", "title": "YoY growth (%)"},
+          {"field": "national_average_percent", "title": "National average (%)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "yoy_growth_percent",
+          "type": "quantitative",
+          "format": "+.1f"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Shopper Type vs Contribution to Online Spending"
+  },
+
+  "width": 850,
+  "height": 350,
+
+  "data": {
+    "url": "data/chart7_shopper_segments.csv"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "shopper_type",
+      "type": "nominal",
+      "sort": [
+        "Sometime Shopper",
+        "Selective Shopper",
+        "Savvy Shopper",
+        "Super Shopper"
+      ],
+      "title": "Shopper Type"
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#BDBDBD"
+      },
+      "encoding": {
+        "x": {
+          "field": "shopper_share",
+          "type": "quantitative",
+          "title": "Percentage (%)"
+        },
+        "x2": {
+          "field": "volume_share"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "fold": [
+            "shopper_share",
+            "volume_share"
+          ],
+          "as": [
+            "measure",
+            "value"
+          ]
+        },
+        {
+          "calculate": "datum.measure == 'shopper_share' ? 'Share of Online Shoppers (%)' : 'Share of Spending Volume (%)'",
+          "as": "measure_label"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 350,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "measure_label",
+          "type": "nominal",
+          "title": "Measure",
+          "scale": {
+            "domain": [
+              "Share of Online Shoppers (%)",
+              "Share of Spending Volume (%)"
+            ],
+            "range": [
+              "#4C78A8",
+              "#E45756"
+            ]
+          },
+          "legend": {
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "shopper_type",
+            "title": "Shopper Type"
+          },
+          {
+            "field": "measure_label",
+            "title": "Measure"
+          },
+          {
+            "field": "value",
+            "title": "Percentage (%)"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -12,
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#4C78A8"
+      },
+      "encoding": {
+        "x": {
+          "field": "shopper_share",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "shopper_share",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 12,
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#E45756"
+      },
+      "encoding": {
+        "x": {
+          "field": "volume_share",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "volume_share",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

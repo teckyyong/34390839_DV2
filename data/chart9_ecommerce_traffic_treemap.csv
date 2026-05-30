@@ -1,0 +1,61 @@
+domain,retailer,visits_million,desktop_share_percent,desktop_visits_million,mobile_share_percent,mobile_visits_million,mom_growth_percent,yoy_growth_percent,main_traffic_source,retailer_type,x0,y0,x1,y1,label_x,label_y,label,show_label
+amazon.com.au,Amazon,52.65,44.04,23.18,55.96,29.46,-14.68,0.16,Direct,Marketplace,0,0,36,20,18.0,10.0,"Amazon
+52.6M
++0.2%",yes
+kmart.com.au,Kmart,28.23,21.82,6.16,78.18,22.07,-13.2,24.65,Direct,Department Store,36,0,62,20,49.0,10.0,"Kmart
+28.2M
++24.6%",yes
+bunnings.com.au,Bunnings,28.14,27.01,7.6,72.99,20.54,-12.25,3.19,Direct,Home Improvement,62,0,88,20,75.0,10.0,"Bunnings
+28.1M
++3.2%",yes
+ebay.com.au,eBay,25.77,54.76,14.11,45.24,11.66,-12.92,-18.09,Direct,Marketplace,88,0,100,20,94.0,10.0,"eBay
+25.8M
+-18.1%",yes
+ozbargain.com.au,OzBargain,25.07,43.49,10.9,56.51,14.16,-24.11,-39.48,Direct,Deals,0,20,28,40,14.0,30.0,"OzBargain
+25.1M
+-39.5%",yes
+woolworths.com.au,Woolworths,20.83,28.62,5.96,71.38,14.87,-20.41,6.57,Direct,Grocery,28,20,52,40,40.0,30.0,"Woolworths
+20.8M
++6.6%",yes
+jbhifi.com.au,JB Hi-Fi,19.18,33.39,6.4,66.61,12.77,-16.4,2.06,Direct,Electronics,52,20,74,40,63.0,30.0,"JB Hi-Fi
+19.2M
++2.1%",yes
+bigw.com.au,BIG W,17.34,22.94,3.98,77.06,13.36,-9.69,15.99,Direct,Department Store,74,20,88,40,81.0,30.0,"BIG W
+17.3M
++16.0%",yes
+chemistwarehouse.com.au,Chemist Warehouse,16.03,19.28,3.09,80.72,12.94,-22.43,31.61,Direct,Health & Beauty,88,20,100,40,94.0,30.0,"Chemist Warehouse
+16.0M
++31.6%",yes
+coles.com.au,Coles,15.64,28.08,4.39,71.92,11.25,-17.4,4.18,Direct,Grocery,0,40,22,55,11.0,47.5,"Coles
+15.6M
++4.2%",yes
+myer.com.au,Myer,12.04,21.91,2.64,78.09,9.4,-13.86,30.27,Direct,Department Store,22,40,39,55,30.5,47.5,"Myer
+12.0M
++30.3%",yes
+aliexpress.com,AliExpress,10.97,58.66,6.44,41.34,4.53,-21.2,-6.23,Direct,Marketplace,39,40,55,55,47.0,47.5,"AliExpress
+11.0M
+-6.2%",yes
+target.com.au,Target,9.83,17.19,1.69,82.81,8.14,-5.01,36.91,Direct,Department Store,55,40,69,55,62.0,47.5,"Target
+9.8M
++36.9%",yes
+officeworks.com.au,Officeworks,8.67,39.53,3.43,60.47,5.24,-26.81,10.45,Direct,Office Supplies,69,40,82,55,75.5,47.5,"Officeworks
+8.7M
++10.4%",yes
+etsy.com,Etsy,8.07,38.49,3.1,61.51,4.96,-31.2,-3.13,Direct,Marketplace,82,40,92,55,87.0,47.5,"Etsy
+8.1M
+-3.1%",yes
+ikea.com,IKEA,7.85,31.4,2.47,68.6,5.39,-12.38,4.44,Direct,Home & Furniture,92,40,100,55,96.0,47.5,"IKEA
+7.8M
++4.4%",yes
+theiconic.com.au,The Iconic,6.26,33.93,2.12,66.07,4.13,-34.39,42.91,Direct,Fashion,0,55,16,65,8.0,60.0,"The Iconic
+6.3M
++42.9%",small
+shein.com,SHEIN,5.92,35.15,2.08,64.85,3.84,-13.7,59.22,Direct,Fashion,16,55,31,65,23.5,60.0,"SHEIN
+5.9M
++59.2%",small
+harveynorman.com.au,Harvey Norman,5.79,35.4,2.05,64.6,3.74,-8.93,9.32,Direct,Electronics,31,55,46,65,38.5,60.0,"Harvey Norman
+5.8M
++9.3%",small
+spotlightstores.com,Spotlight,5.32,19.7,1.05,80.3,4.27,-26.65,32.46,Direct,Home & Craft,46,55,60,65,53.0,60.0,"Spotlight
+5.3M
++32.5%",small

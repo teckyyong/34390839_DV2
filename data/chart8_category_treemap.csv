@@ -1,0 +1,8 @@
+category,online_spend_billion,yoy_growth_percent,online_share_percent,x0,x1,y0,y1,label_x,label_y,label
+Fashion & Apparel,18.7,-3.5,20.6,0.0,0.294,0.0,1.0,0.147,0.5,Fashion & Apparel
+Food & Liquor,13.1,11.4,4.6,0.294,0.5,0.0,1.0,0.397,0.5,Food & Liquor
+Health & Beauty,11.6,8.6,6.8,0.5,0.682,0.0,1.0,0.591,0.5,Health & Beauty
+Hobbies & Rec Goods,11.1,-5.2,29.3,0.682,0.8565,0.0,1.0,0.769,0.5,Hobbies & Rec Goods
+Home & Garden,4.3,-3.9,3.0,0.8565,1.0,0.0,0.472,0.928,0.236,Home & Garden
+Variety Stores,2.9,-5.7,18.1,0.8565,1.0,0.472,0.79,0.928,0.631,Variety Stores
+Media,1.9,-0.9,17.4,0.8565,1.0,0.79,1.0,0.928,0.895,Media

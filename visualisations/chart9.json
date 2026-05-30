@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Top Australian eCommerce Sites by Monthly Visits (April 2026)",
+    "subtitle": "Area represents monthly visits; colour represents YoY growth"
+  },
+
+  "width": 900,
+  "height": 520,
+
+  "data": {
+    "url": "data/chart9_ecommerce_traffic_treemap.csv"
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {"field": "x0", "type": "quantitative", "axis": null},
+        "x2": {"field": "x1"},
+        "y": {"field": "y0", "type": "quantitative", "axis": null},
+        "y2": {"field": "y1"},
+        "color": {
+          "field": "yoy_growth_percent",
+          "type": "quantitative",
+          "title": "YoY growth (%)",
+          "scale": {
+            "scheme": "redyellowgreen",
+            "domainMid": 0
+          }
+        },
+        "tooltip": [
+          {"field": "retailer", "title": "Retailer"},
+          {"field": "domain", "title": "Domain"},
+          {"field": "visits_million", "title": "Visits (M)"},
+          {"field": "desktop_share_percent", "title": "Desktop share (%)"},
+          {"field": "mobile_share_percent", "title": "Mobile share (%)"},
+          {"field": "yoy_growth_percent", "title": "YoY growth (%)"},
+          {"field": "mom_growth_percent", "title": "MoM growth (%)"},
+          {"field": "retailer_type", "title": "Retailer type"}
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {"filter": "datum.show_label == 'yes'"}
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {"field": "label_x", "type": "quantitative", "axis": null},
+        "y": {"field": "label_y", "type": "quantitative", "axis": null},
+        "text": {"field": "label"},
+        "color": {"value": "black"}
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

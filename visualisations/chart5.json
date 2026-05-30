@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Online Category Spend vs Growth in Australia (2025)",
+    "subtitle": "Bubble size represents online spend",
+    "fontSize": 20
+  },
+
+  "data": {
+    "url": "data/chart5_category_growth.csv"
+  },
+
+  "width": 750,
+  "height": 430,
+
+  "params": [
+    {
+      "name": "category_highlight",
+      "select": {
+        "type": "point",
+        "fields": ["category"]
+      },
+      "bind": "legend"
+    }
+  ],
+
+  "mark": {
+    "type": "circle",
+    "stroke": "white",
+    "strokeWidth": 1.5
+  },
+
+  "encoding": {
+    "x": {
+      "field": "online_spend_billion",
+      "type": "quantitative",
+      "title": "Online spend ($ billions)"
+    },
+
+    "y": {
+      "field": "yoy_growth_percent",
+      "type": "quantitative",
+      "title": "YoY growth (%)"
+    },
+
+    "size": {
+      "field": "online_spend_billion",
+      "type": "quantitative",
+      "scale": {
+        "range": [100, 1800]
+      },
+      "legend": null
+    },
+
+    "color": {
+      "field": "category",
+      "type": "nominal",
+      "title": "Category"
+    },
+
+    "opacity": {
+      "condition": {
+        "param": "category_highlight",
+        "value": 0.9
+      },
+      "value": 0.18
+    },
+
+    "tooltip": [
+      {
+        "field": "category",
+        "type": "nominal",
+        "title": "Category"
+      },
+      {
+        "field": "online_spend_billion",
+        "type": "quantitative",
+        "title": "Online spend ($b)",
+        "format": ".1f"
+      },
+      {
+        "field": "yoy_growth_percent",
+        "type": "quantitative",
+        "title": "YoY growth (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

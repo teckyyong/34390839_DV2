@@ -1,0 +1,9 @@
+state,state_abbr,yoy_growth_percent,national_average_percent,growth_type
+Queensland,QLD,11.1,-2.6,Positive
+Western Australia,WA,11.0,-2.6,Positive
+Tasmania,TAS,9.9,-2.6,Positive
+South Australia,SA,7.8,-2.6,Positive
+Northern Territory,NT,3.9,-2.6,Positive
+Victoria,VIC,-8.4,-2.6,Negative
+Australian Capital Territory,ACT,-9.0,-2.6,Negative
+New South Wales,NSW,-10.5,-2.6,Negative
