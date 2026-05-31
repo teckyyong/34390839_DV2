@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "title": "State Growth in Online Shopping Across Australia (2022)",
+  "title": "State Growth in Online Shopping Across Australia (2021-2022)",
 
   "width": 850,
   "height": 420,
@@ -20,7 +20,7 @@
     "x": {
       "field": "yoy_growth_percent",
       "type": "quantitative",
-      "title": "YoY growth (%)"
+      "title": "Annual growth (%)"
     }
   },
 

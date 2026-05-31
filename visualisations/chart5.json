@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Online Category Spend vs Growth in Australia (2025)",
+    "text": "Online Category Spend vs Annual Growth in Australia",
     "subtitle": "Bubble size represents online spend",
     "fontSize": 20
   },
@@ -11,8 +11,8 @@
     "url": "data/chart5_category_growth.csv"
   },
 
-  "width": 750,
-  "height": 430,
+  "width": 300,
+  "height": 400,
 
   "params": [
     {
@@ -41,7 +41,7 @@
     "y": {
       "field": "yoy_growth_percent",
       "type": "quantitative",
-      "title": "YoY growth (%)"
+      "title": "Annual growth (%)"
     },
 
     "size": {
@@ -54,10 +54,34 @@
     },
 
     "color": {
-      "field": "category",
-      "type": "nominal",
-      "title": "Category"
-    },
+  "field": "category",
+  "type": "nominal",
+  "title": "Category",
+  "scale": {
+    "domain": [
+      "Books, stationery & multimedia",
+      "Consumer electronics",
+      "Department stores",
+      "Fashion & apparel",
+      "Food & liquor",
+      "Health & beauty",
+      "Hobbies & recreation goods",
+      "Home & garden",
+      "Online marketplaces"
+    ],
+    "range": [
+      "#4E79A7",
+      "#F28E2B",
+      "#B07AA1",
+      "#76B7B2",
+      "#59A14F",
+      "#EDC948",
+      "#9C755F",
+      "#FF9DA7",
+      "#BAB0AC"
+    ]
+  }
+},
 
     "opacity": {
       "condition": {

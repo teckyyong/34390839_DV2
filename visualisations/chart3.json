@@ -2,13 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Online vs In-store Shopping Behaviour by Generation (2025)",
-    "subtitle": "Click generation in legend to highlight",
-    "fontSize": 20
-  },
+  "text": "Online vs In-store Shopping Behaviour",
+  "fontSize": 18,
+  "subtitleFontSize": 13
+},
 
-  "width": 650,
-  "height": 450,
+  "width": 250,
+  "height": 350,
 
   "data": {
     "url": "data/generation_channel_online_spending.csv"

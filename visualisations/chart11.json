@@ -2,8 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Changing Drivers of Online Shopping in Australia",
-    "subtitle": "Use the year filter to highlight how shopper priorities changed from 2021 to 2023"
+    "text": "Online Shopping Reasons in Australia"
   },
 
   "width": 600,
@@ -15,13 +14,13 @@
 
   "params": [
     {
-      "name": "selected_year",
-      "value": 2023,
-      "bind": {
+        "name": "selected_year",
+        "value": "All",
+        "bind": {
         "input": "select",
-        "options": [2021, 2022, 2023],
+        "options": ["All", 2021, 2022, 2023],
         "name": "Highlight year: "
-      }
+        }
     }
   ],
 
@@ -62,11 +61,11 @@
           }
         },
         "opacity": {
-          "condition": {
-            "test": "datum.year == selected_year",
+        "condition": {
+            "test": "selected_year == 'All' || datum.year == selected_year",
             "value": 1
-          },
-          "value": 0.18
+        },
+        "value": 0.12
         },
         "detail": {
           "field": "year"

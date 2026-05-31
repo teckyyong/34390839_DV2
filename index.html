@@ -1,179 +1,187 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+    <title>Online Shopping and Consumer Behaviour in Australia</title>
 
-<title>
-Online Shopping and Consumer Behaviour in Australia
-</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<!-- Vega libraries -->
-
-<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
+    <!-- Vega libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 
 <body>
 
-<h1>
-Online Shopping and Consumer Behaviour in Australia
-</h1>
+    <header class="main-header">
+        <h1>Online Shopping and Consumer Behaviour in Australia</h1>
+        <p>FIT2179 Data Visualisation 2</p>
+        <p class="intro-text">
+            This visualisation explores how online shopping in Australia has changed over time,
+            what consumers buy, who drives online spending, and where eCommerce activity is strongest.
+        </p>
+    </header>
 
-<p>
-FIT2179 Data Visualisation 2
-</p>
+    <!-- SECTION 1 -->
+    <section class="story-section">
+        <h2>1. Market Growth Overview</h2>
+        <p class="section-intro">
+            Australia’s online retail market grew strongly over the last two decades, with major changes
+            during and after the COVID period. This section introduces the overall market trend and the
+            changing reasons why Australians shop online.
+        </p>
 
-<h2>
-Chart 1: Growth of Retail Categories in Australia
-</h2>
+        <h3>Retail Turnover in Australia</h3>
+        <div id="chart1"></div>
+        <p class="chart-description">
+            Retail turnover has increased across most categories since 2000. The sharp changes around
+            2020–2022 show how pandemic-related behaviour accelerated online and retail activity, before
+            the market began stabilising again.
+        </p>
 
-<div id="chart1"></div>
+        <h3>Factors that Drive Online Shopping</h3>
+        <div id="chart11"></div>
+        <p class="chart-description">
+            Convenience remains the main reason Australians shop online, but cost-related drivers such as
+            discounts and price comparison became more important in 2023. This suggests that online
+            shopping is no longer only about convenience, but also about managing household budgets.
+        </p>
+    </section>
 
-<script>
+    <!-- SECTION 2 -->
+    <section class="story-section">
+        <h2>2. What Australians Buy Online</h2>
+        <p class="section-intro">
+            After understanding the overall market, this section explores which product categories attract
+            the most online spending and which categories are growing the fastest.
+        </p>
 
-vegaEmbed(
-"#chart1",
-"visualisations/chart1.json"
-).catch(console.error);
+        <div class="row-container">
+            <div class="chart-card">
+                <h3>Online Spend by Category (2025)</h3>
+                <div id="chart2"></div>
+                <p class="chart-description">
+                    Online marketplaces, food and liquor, fashion, and home-related categories are among
+                    the largest contributors to online spending. This shows that online shopping is now used
+                    for both discretionary and everyday purchases.
+                </p>
+            </div>
 
-</script>
+            <div class="chart-card">
+                <h3>Retail Category Spending and annual growth (2024-2025)</h3>
+                <div id="chart5"></div>
+                <p class="chart-description">
+                    The bubble chart compares category size and growth. Some categories with lower total
+                    spending show strong growth, while large categories continue to dominate overall online
+                    expenditure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="story-section">
+        <h2>3. Who Shops Online?</h2>
+        <p class="section-intro">
+            Online shopping behaviour differs strongly across generations and shopper types. This section
+            focuses on the people behind online spending, showing how different groups shop, spend, and
+            discover products.
+        </p>
+
+        <div class="row-container">
+            <div class="chart-card">
+                <h3>Shopping Behaviour by Generation (2025)</h3>
+                <div id="chart3"></div>
+                <p class="chart-description">
+                    Younger generations show a higher online shopping share compared with older groups,
+                    but in-store shopping still remains important across all generations.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <h3>Online Spending by Generation (2024)</h3>
+                <div id="chart8"></div>
+                <p class="chart-description">
+                    Millennials lead online spending, while older cohorts show stronger growth from a
+                    smaller base. This indicates that online shopping adoption is still expanding among
+                    older consumers.
+                </p>
+            </div>
+        </div>
+
+        <h3>Shopper Segments and Spending Contribution</h3>
+        <div id="chart7"></div>
+        <p class="chart-description">
+            Although Super Shoppers represent only 16% of Australian online shoppers, they account for
+            half of all online spending volume. In contrast, Sometime Shoppers make up the largest share
+            of shoppers but contribute only a small share of spending. This highlights the importance of
+            retaining frequent and high-value online shoppers.
+        </p>
+
+        <h3>Social Media Product Discovery by Age Group</h3>
+        <div id="chart10"></div>
+        <p class="chart-description">
+            Social media platforms influence product discovery differently across age groups. Gen Z relies
+            heavily on TikTok and Instagram, while older generations are more likely to use Facebook.
+            This shows why retailers need different digital marketing strategies for different audiences.
+        </p>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="story-section">
+        <h2>4. Where Online Shopping Happens</h2>
+        <p class="section-intro">
+            Online shopping is not evenly distributed across Australia. This section examines geographic
+            differences in spending and growth, before showing which eCommerce sites dominate online
+            traffic.
+        </p>
+
+        <h3>Online Spending in Australia</h3>
+        <div id="chart4"></div>
+        <p class="chart-description">
+            New South Wales, Victoria and Queensland record the highest online spending, reflecting their
+            larger populations and stronger retail markets. The map helps users quickly compare the
+            geographic concentration of online spending.
+        </p>
+
+        <h3>Annual State Growth in Online Shopping</h3>
+        <div id="chart6"></div>
+        <p class="chart-description">
+            Regional states such as Queensland and Western Australia experienced the strongest growth in
+            online shopping activity, while highly urbanised states such as New South Wales and Victoria
+            recorded negative year-on-year growth. This suggests that post-pandemic online shopping
+            behaviour shifted differently across Australia.
+        </p>
+
+        <h3>Top eCommerce Sites by Monthly Visits</h3>
+        <div id="chart9"></div>
+        <p class="chart-description">
+            The eCommerce traffic treemap shows that Australian online retail attention is concentrated
+            among a small group of major platforms. Large retailers such as Kmart, Amazon, Bunnings,
+            Woolworths and JB Hi-Fi receive high monthly traffic, showing the dominance of established
+            brands in Australia’s online shopping landscape.
+        </p>
+    </section>
+
+    <!-- Vega Embed Scripts -->
+    <script>
+        vegaEmbed("#chart1", "visualisations/chart1.json").catch(console.error);
+        vegaEmbed("#chart11", "visualisations/chart11.json").catch(console.error);
+
+        vegaEmbed("#chart2", "visualisations/chart2.json").catch(console.error);
+        vegaEmbed("#chart5", "visualisations/chart5.json").catch(console.error);
+
+        vegaEmbed("#chart3", "visualisations/chart3.json").catch(console.error);
+        vegaEmbed("#chart8", "visualisations/chart8.json").catch(console.error);
+        vegaEmbed("#chart7", "visualisations/chart7.json").catch(console.error);
+        vegaEmbed("#chart10", "visualisations/chart10.json").catch(console.error);
+
+        vegaEmbed("#chart4", "visualisations/chart4.json").catch(console.error);
+        vegaEmbed("#chart6", "visualisations/chart6.json").catch(console.error);
+        vegaEmbed("#chart9", "visualisations/chart9.json").catch(console.error);
+    </script>
 
 </body>
 
 </html>
-
-<h2>
-Consumer Shopping Behaviour
-</h2>
-
-<div class="row-container">
-
-<div id="chart2"></div>
-
-<div id="chart3"></div>
-
-</div>
-
-<script>
-
-vegaEmbed(
-"#chart2",
-"visualisations/chart2.json"
-).catch(console.error);
-
-vegaEmbed(
-"#chart3",
-"visualisations/chart3.json"
-).catch(console.error);
-
-</script>
-
-<h2>Chart 4: Online Spending Across Australian States</h2>
-
-<div id="chart4"></div>
-
-<script>
-vegaEmbed(
-  "#chart4",
-  "visualisations/chart4.json"
-).catch(console.error);
-</script>
-
-<h2>Chart 5: Category Spend vs Growth</h2>
-
-<div id="chart5"></div>
-
-<script>
-vegaEmbed(
-  "#chart5",
-  "visualisations/chart5.json"
-).catch(console.error);
-</script>
-
-<h2>Chart 6: State Growth in Online Shopping</h2>
-
-<div id="chart6"></div>
-
-<script>
-vegaEmbed(
-  "#chart6",
-  "visualisations/chart6.json"
-).catch(console.error);
-</script>
-
-<p class="chart-description">
-Regional states such as Queensland and Western Australia experienced the strongest growth in online shopping activity, 
-while highly urbanised states including New South Wales and Victoria recorded negative year-on-year growth. 
-This suggests that consumer behaviour after the pandemic shifted differently across Australia, 
-with regional consumers continuing to rely heavily on eCommerce while metro areas returned more strongly 
-to physical retail shopping.
-</p>
-
-<h2>Chart 7: Shopper Segments and Spending Contribution</h2>
-
-<div id="chart7"></div>
-
-<script>
-vegaEmbed(
-  "#chart7",
-  "visualisations/chart7.json"
-).catch(console.error);
-</script>
-
-<p class="chart-description">
-Although Super Shoppers represent only 16% of Australian online shoppers, they account for half of all online spending volume.
- In contrast, Sometime Shoppers make up the largest share of shoppers (30%) but contribute only 4% of total spending. 
- This highlights the importance of retaining high-frequency online shoppers, as a relatively small customer segment 
- generates a disproportionate share of eCommerce revenue.
-</p>
-
-<h2>Chart 8: Online Spending by Generation</h2>
-
-<div id="chart8"></div>
-
-<script>
-vegaEmbed(
-  "#chart8",
-  "visualisations/chart8.json"
-).catch(console.error);
-</script>
-
-<h2>Chart 9: Top eCommerce Sites by Monthly Visits</h2>
-
-<div id="chart9"></div>
-
-<script>
-vegaEmbed(
-  "#chart9",
-  "visualisations/chart9.json"
-).catch(console.error);
-</script>
-
-<h2>Chart 10: Social Media Product Discovery by Age Group</h2>
-
-<div id="chart10"></div>
-
-<script>
-vegaEmbed(
-  "#chart10",
-  "visualisations/chart10.json"
-).catch(console.error);
-</script>
-
-<h2>Chart 11: Main Drivers of Online Shopping</h2>
-
-<div id="chart11"></div>
-
-<script>
-vegaEmbed(
-  "#chart11",
-  "visualisations/chart11.json"
-).catch(console.error);
-</script>

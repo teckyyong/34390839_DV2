@@ -2,15 +2,14 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Online Spending by Generation in Australia (2024)",
-    "subtitle": "Small multiple bar charts comparing spend, growth and share"
+    "text": "Online spending, growth and share"
   },
 
   "data": {
     "url": "data/chart8_generation_spending_metrics.csv"
   },
 
-  "width": 220,
+  "width": 110,
   "height": 260,
 
   "mark": {
@@ -34,10 +33,26 @@
       "title": null
     },
     "color": {
-      "field": "generation",
-      "type": "nominal",
-      "legend": null
-    },
+  "field": "generation",
+  "type": "nominal",
+  "legend": null,
+  "scale": {
+    "domain": [
+      "Baby Boomers",
+      "Builders",
+      "Gen X",
+      "Gen Z",
+      "Millennials"
+    ],
+    "range": [
+      "#4E79A7",
+      "#F28E2B",
+      "#B07AA1",
+      "#76B7B2",
+      "#59A14F"
+    ]
+  }
+},
     "column": {
       "field": "metric",
       "type": "nominal",

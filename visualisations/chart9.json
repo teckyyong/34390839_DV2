@@ -3,7 +3,7 @@
 
   "title": {
     "text": "Top Australian eCommerce Sites by Monthly Visits (April 2026)",
-    "subtitle": "Area represents monthly visits; colour represents YoY growth"
+    "subtitle": "Area represents monthly visits; colour represents annual growth"
   },
 
   "width": 900,
@@ -21,48 +21,164 @@
         "strokeWidth": 2
       },
       "encoding": {
-        "x": {"field": "x0", "type": "quantitative", "axis": null},
-        "x2": {"field": "x1"},
-        "y": {"field": "y0", "type": "quantitative", "axis": null},
-        "y2": {"field": "y1"},
+        "x": {
+          "field": "x0",
+          "type": "quantitative",
+          "axis": null
+        },
+        "x2": {
+          "field": "x1"
+        },
+        "y": {
+          "field": "y0",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y2": {
+          "field": "y1"
+        },
         "color": {
           "field": "yoy_growth_percent",
           "type": "quantitative",
-          "title": "YoY growth (%)",
+          "title": "Annual growth (%)",
           "scale": {
-            "scheme": "redyellowgreen",
-            "domainMid": 0
+            "domain": [-40, 0, 50],
+            "range": ["#F28E2B", "#F7F7F7", "#4E79A7"]
           }
         },
         "tooltip": [
-          {"field": "retailer", "title": "Retailer"},
-          {"field": "domain", "title": "Domain"},
-          {"field": "visits_million", "title": "Visits (M)"},
-          {"field": "desktop_share_percent", "title": "Desktop share (%)"},
-          {"field": "mobile_share_percent", "title": "Mobile share (%)"},
-          {"field": "yoy_growth_percent", "title": "YoY growth (%)"},
-          {"field": "mom_growth_percent", "title": "MoM growth (%)"},
-          {"field": "retailer_type", "title": "Retailer type"}
+          {
+            "field": "retailer",
+            "title": "Retailer"
+          },
+          {
+            "field": "domain",
+            "title": "Domain"
+          },
+          {
+            "field": "visits_million",
+            "title": "Visits (M)"
+          },
+          {
+            "field": "desktop_share_percent",
+            "title": "Desktop share (%)"
+          },
+          {
+            "field": "mobile_share_percent",
+            "title": "Mobile share (%)"
+          },
+          {
+            "field": "yoy_growth_percent",
+            "title": "Annual growth (%)"
+          },
+          {
+            "field": "mom_growth_percent",
+            "title": "Monthly growth (%)"
+          },
+          {
+            "field": "retailer_type",
+            "title": "Retailer type"
+          }
         ]
       }
     },
 
     {
       "transform": [
-        {"filter": "datum.show_label == 'yes'"}
+        {
+          "filter": "datum.visits_million >= 15"
+        }
       ],
       "mark": {
         "type": "text",
-        "fontSize": 12,
+        "fontSize": 13,
         "fontWeight": "bold",
         "align": "center",
         "baseline": "middle"
       },
       "encoding": {
-        "x": {"field": "label_x", "type": "quantitative", "axis": null},
-        "y": {"field": "label_y", "type": "quantitative", "axis": null},
-        "text": {"field": "label"},
-        "color": {"value": "black"}
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.visits_million >= 8 && datum.visits_million < 15"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "filter": "datum.visits_million >= 5 && datum.visits_million < 8"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 8,
+        "fontWeight": "bold",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "axis": null
+        },
+        "y": {
+          "field": "label_y",
+          "type": "quantitative",
+          "axis": null
+        },
+        "text": {
+          "field": "retailer"
+        },
+        "color": {
+          "value": "black"
+        }
       }
     }
   ],

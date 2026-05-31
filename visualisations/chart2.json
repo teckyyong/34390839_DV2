@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
   "title": {
-    "text": "Online Spend by Category in Australia, 2025",
+    "text": "Revenue generated through online spending",
     "fontSize": 20
   },
 
@@ -16,7 +16,7 @@
     }
   ],
 
-  "width": 420,
+  "width": 350,
   "height": 350,
 
   "params": [
@@ -55,10 +55,34 @@
     },
 
     "color": {
-      "field": "category",
-      "type": "nominal",
-      "legend": null
-    },
+  "field": "category",
+  "type": "nominal",
+  "legend": null,
+  "scale": {
+    "domain": [
+      "Books, stationery & multimedia",
+      "Consumer electronics",
+      "Department stores",
+      "Fashion & apparel",
+      "Food & liquor",
+      "Health & beauty",
+      "Hobbies & recreation goods",
+      "Home & garden",
+      "Online marketplaces"
+    ],
+    "range": [
+      "#4E79A7",
+      "#F28E2B",
+      "#B07AA1",
+      "#76B7B2",
+      "#59A14F",
+      "#EDC948",
+      "#9C755F",
+      "#FF9DA7",
+      "#BAB0AC"
+    ]
+  }
+},
 
     "opacity": {
       "condition": {
