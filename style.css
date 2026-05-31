@@ -1,12 +1,12 @@
 :root {
-    --bg: #EEF4FA;
-    --card: #FFFFFF;
+    --bg: #9cc0e4;
+    --card: #ffffff;
     --navy: #1F3A5F;
     --blue: #0970ED;
-    --soft-blue: #E8F2FF;
+    --soft-blue: #0169f0;
     --text: #4A5568;
     --muted: #6B7A90;
-    --border: #D9E2EC;
+    --border: #03499a;
 }
 
 * {
@@ -15,7 +15,7 @@
 
 body {
     font-family: "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #EEF4FA 0%, #F8FBFD 100%);
+    background: linear-gradient(180deg, #a6c2dd 0%, #c4c4cb 100%);
     color: var(--text);
     margin: 0;
     padding: 0;
@@ -124,7 +124,6 @@ body {
     margin-top: 0;
 }
 
-/* CHART BOXES */
 
 .vega-embed {
     background: #FFFFFF;
@@ -135,8 +134,6 @@ body {
     max-width: 100%;
     overflow-x: auto;
 }
-
-/* CENTER FULL-WIDTH CHARTS */
 
 #chart1,
 #chart4,
@@ -149,7 +146,6 @@ body {
     justify-content: center;
 }
 
-/* SMALLER TWO-COLUMN CHARTS */
 
 #chart2,
 #chart3,
@@ -158,8 +154,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
-/* HOVER EFFECT */
 
 .story-section,
 .chart-card,
@@ -176,7 +170,6 @@ body {
     box-shadow: 0 8px 22px rgba(9,112,237,0.10);
 }
 
-/* RESPONSIVE */
 
 @media screen and (max-width: 1050px) {
     .row-container {
